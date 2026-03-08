@@ -1,29 +1,25 @@
-function scrollToSection(id){
+function openPage(pageId){
 
-document.getElementById(id).scrollIntoView({
-behavior:"smooth"
-})
+const pages=document.querySelectorAll('.page')
 
-}
+pages.forEach(p=>p.style.display='none')
 
+document.querySelector('.hero').style.display='none'
 
-const timelineItems = document.querySelectorAll(".timeline-item")
+document.getElementById(pageId).style.display='block'
 
-const observer = new IntersectionObserver(entries =>{
-
-entries.forEach(entry =>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show")
+window.scrollTo({top:0,behavior:'smooth'})
 
 }
 
-})
+function goHome(){
 
-})
+const pages=document.querySelectorAll('.page')
 
+pages.forEach(p=>p.style.display='none')
 
-timelineItems.forEach(item=>{
-observer.observe(item)
-})
+document.querySelector('.hero').style.display='block'
+
+window.scrollTo({top:0,behavior:'smooth'})
+
+}
