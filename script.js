@@ -1,11 +1,13 @@
-function showSection(id) {
+function toggleDetails(element){
 
-let sections = document.querySelectorAll(".content");
+const details = element.querySelector(".details");
 
-sections.forEach(section => {
-section.style.display = "none";
-});
+if(details.style.display === "block"){
+details.style.display = "none";
+}
 
-document.getElementById(id).style.display = "block";
+else{
+details.style.display = "block";
+}
 
 }
