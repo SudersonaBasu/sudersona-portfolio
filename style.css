@@ -3,30 +3,47 @@ body{
 font-family:Arial;
 margin:0;
 background:#0f172a;
-color:#e2e8f0;
+color:white;
 
 }
 
 header{
 
 text-align:center;
-padding:50px;
+padding:100px 20px;
 background:#020617;
 
 }
 
 header h1{
 
-font-size:40px;
-margin-bottom:10px;
+font-size:42px;
 
 }
 
-.links a{
+.nav-buttons{
+
+margin-top:30px;
+
+}
+
+.nav-buttons button{
 
 margin:10px;
-color:#38bdf8;
-text-decoration:none;
+padding:12px 25px;
+border:none;
+background:#38bdf8;
+color:black;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.nav-buttons button:hover{
+
+transform:scale(1.1);
+transition:0.3s;
 
 }
 
@@ -34,28 +51,62 @@ section{
 
 max-width:1000px;
 margin:auto;
-padding:40px 20px;
+padding:60px 20px;
+
+}
+
+.skills span{
+
+display:inline-block;
+background:#1e293b;
+padding:10px 15px;
+margin:8px;
+border-radius:8px;
 
 }
 
 .timeline{
 
-border-left:3px solid #334155;
-padding-left:30px;
+position:relative;
+margin-top:40px;
+
+}
+
+.timeline::before{
+
+content:"";
+position:absolute;
+left:20px;
+width:3px;
+height:100%;
+background:#334155;
 
 }
 
 .timeline-item{
 
+display:flex;
 margin-bottom:40px;
-cursor:pointer;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s;
 
 }
 
-.timeline-year{
+.timeline-item.show{
 
-font-weight:bold;
-color:#38bdf8;
+opacity:1;
+transform:translateY(0);
+
+}
+
+.timeline-dot{
+
+width:15px;
+height:15px;
+background:#38bdf8;
+border-radius:50%;
+margin-right:20px;
 
 }
 
@@ -67,35 +118,17 @@ border-radius:10px;
 
 }
 
-.details{
+.year{
 
-display:none;
-margin-top:10px;
-
-}
-
-.skills span{
-
-display:inline-block;
-background:#1e293b;
-margin:6px;
-padding:8px 12px;
-border-radius:8px;
+color:#38bdf8;
 
 }
 
-.projects{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-.project{
+.card{
 
 background:#1e293b;
 padding:20px;
+margin-bottom:20px;
 border-radius:10px;
 
 }
